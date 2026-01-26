@@ -2,11 +2,38 @@ from pathlib import Path
 import re
 
 
-file_path = Path
+def read_file(relative_path: str) -> str:
+    base_dir = Path(__file__).parent.parent
+    file_path = base_dir / relative_path
+
+    with open(file_path, "r") as file:
+        return file.read()
 
 
+def run_logs():
+    text = read_file("data/logs.txt")
+    print("\n--------LOGS-------\n")
+    # print(text)
 
-def main():
+    lines = text.splitlines() # splits the whole text file into items that are each a line
+
+    for line in lines:
+
+        if re.search(r"\bERROR\b", line): # check if it has the word ERROR in it, if there is a match (it does) print the line
+            print(line)
+
+    ips = re.findall(r"\b(?:\d{1,3}\.){3}\d{1,3}\b", text)
+    # (?:\d{1,3}\.){3} = find this pattern ( between 1 and 3 digits followed by a dot) 3 times
+    # then find between 1 and 3 digits then end
+    print(ips)
+
+    redacted_text = re.sub(r"\b(?:\d{1,3}\.){3}\d{1,3}\b", "REDACTED", text)
+    print(f"\n {redacted_text}")
+
+    timestamps = re.findall(r"\b\d{4}\-\d{2}\-\d{2}\s\d{2}(?:\:\d{2}){2}\b",text)
+    print(timestamps)
+
+def run_sample():
     base_dir = Path(__file__).parent.parent
     file_path = base_dir / "data" / "sample.txt"
 
@@ -73,6 +100,9 @@ def main():
     print("-----Phone Numbers----")
     print(phones)
 
+def main():
+    # run_sample()
+    run_logs()
 
 if __name__ == "__main__":
     main()
