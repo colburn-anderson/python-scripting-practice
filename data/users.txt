@@ -1,0 +1,3 @@
+username=jdoe password=Abcdef!1
+username=sam password=weakpass
+username=ann password=Strong#2026

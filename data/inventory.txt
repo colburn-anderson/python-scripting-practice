@@ -1,0 +1,5 @@
+sku, name, price
+A-1001, "USB-C Cable", $9.99
+A-1002, HDMI Adapter, 14.50
+BADLINE without commas
+A-1003, "Laptop Stand", $39.00

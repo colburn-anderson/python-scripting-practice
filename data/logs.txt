@@ -1,0 +1,4 @@
+2026-01-26 09:14:02 INFO  auth: user=jdoe ip=192.168.1.24 action=login
+2026-01-26 09:15:10 WARN  api: user=jane_s ip=10.0.0.5 action=rate_limit
+2026-01-26 09:16:55 ERROR db: user=admin ip=172.16.0.3 action=query_failed code=503
+weird line that should be ignored

@@ -1,0 +1,22 @@
+Name: Alex Johnson
+Email: alex.johnson99@yahoo.com
+Phone: 313-555-0199
+Birthday: 03/23/1982
+
+Name: Maria-Lopez
+Email: maria_lopez@school.edu
+Phone: (248)555-1234
+Birthday: 01/04/1992
+
+Name: Tom
+Email: tom@site
+Phone: 555 111 2222
+
+Backup Phone: 555.222.3333
+Office: 555-444-5555 ext 123
+
+Random Data:
+HELLO!!@@@
+Order ID: 998877
+Date: 01/15/2025
+
