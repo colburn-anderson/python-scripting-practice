@@ -10,4 +10,17 @@ Name: Dr. Alex Q
 Email: alex@site
 Phone: 555-111-2222 ext 99
 
+Name: Maria-Lopez
+Email: maria.lopez@university.edu
+Phone: 313 555 7788
+
+Name: Tom
+Email: tom@personal.co.uk
+Phone: (248)555-1234
+
+Name: Sam_99
+Email: sam99@startup.io
+Phone: 555-222-3333 x123
+
 Notes: CALL ASAP!!! ref#A-1234
+Emergency contact: 999-888-7777

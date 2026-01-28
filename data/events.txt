@@ -1,0 +1,7 @@
+2026-01-28 user=jdoe action=login status=success
+2026-01-28 user=jdoe action=upload status=failed
+2026-01-28 user=asmith action=login status=failed
+2026-01-28 user=asmith action=login status=failed
+2026-01-28 user=bwayne action=download status=success
+2026-01-28 user=jdoe action=login status=success
+2026-01-28 user=bwayne action=login status=failed

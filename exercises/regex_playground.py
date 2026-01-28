@@ -33,6 +33,24 @@ def run_logs():
     timestamps = re.findall(r"\b\d{4}\-\d{2}\-\d{2}\s\d{2}(?:\:\d{2}){2}\b",text)
     print(timestamps)
 
+
+def run_contacts():
+    text = read_file("data/contacts.txt")
+
+    print("-----Contacts-------")
+    
+    emails = re.findall(r"\b[\w.-]+@(?:[\w.-]+\.)+[A-Za-z]{2,}\b", text)
+
+    # [] = character choice, match exactly one character, it must be one of these
+    # () = Pattern / group of characters all together
+    print(emails)
+
+    phones = re.findall(r"\(?\d{3}\)?[\s.-]?\d{3}[\s.-]\d{4}", text)
+    print(phones)
+
+
+
+
 def run_sample():
     base_dir = Path(__file__).parent.parent
     file_path = base_dir / "data" / "sample.txt"
@@ -102,7 +120,8 @@ def run_sample():
 
 def main():
     # run_sample()
-    run_logs()
+    # run_logs()
+    run_contacts()
 
 if __name__ == "__main__":
     main()
