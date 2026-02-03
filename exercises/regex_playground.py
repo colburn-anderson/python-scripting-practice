@@ -49,6 +49,20 @@ def run_contacts():
     print(phones)
 
 
+def run_inventory():
+    text = read_file("data/inventory.txt")
+
+    skus = re.findall(r"\bA\-\d{4}\b", text)
+    print(skus)
+
+    prices = re.findall(r"\b\d+\.\d{2}\b", text)
+    print(prices)
+
+    products = re.findall(r',\s*"([^"]+)"\s*,|,\s*([^,]+)\s*,', text)
+    print([p1 or p2 for p1, p2 in products])
+
+    valid_skus = re.findall(r'^A-\d{4},\s*(".+?"|[^,]+),\s*\$?\d+\.\d{2}$', text, re.MULTILINE)
+    print(valid_skus)
 
 
 def run_sample():
@@ -121,7 +135,8 @@ def run_sample():
 def main():
     # run_sample()
     # run_logs()
-    run_contacts()
+    # run_contacts()
+    run_inventory()
 
 if __name__ == "__main__":
     main()
