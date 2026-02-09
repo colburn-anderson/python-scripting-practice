@@ -64,6 +64,38 @@ def run_inventory():
     valid_skus = re.findall(r'^A-\d{4},\s*(".+?"|[^,]+),\s*\$?\d+\.\d{2}$', text, re.MULTILINE)
     print(valid_skus)
 
+def run_users():
+    text = read_file("data/users.txt")
+
+    usernames = re.findall(r"username\=(\w[a-zA-Z0-9]+)",text)
+
+    print(usernames)
+
+    logins = re.findall(r"username=([a-zA-Z0-9_]+)\s+password=([^\s]+)", text)
+    for login in logins:
+        print(login)
+
+    strongpass = re.findall(r"password=(?=[^\s]{8,})(?=[^\s]*\d)(?=[^\s]*[!@#$])[^\s]+", text)    
+    
+    lines = text.splitlines()
+
+    weak_lines = [
+    line for line in lines
+    if not any(pw in line for pw in strongpass)
+]
+    
+    print(strongpass)
+    print("Weak passwords:\n")
+    for line in weak_lines:
+        print(line)  
+
+    # (?=.*\d) = positive lookahead: from the current position, it must be possible to find a digit somehwere ahead
+    # (?!.*\d) = negative lookahead: from the current position, it must NOT be possible to find a digit anywhere ahead
+
+
+
+
+
 
 def run_sample():
     base_dir = Path(__file__).parent.parent
@@ -136,7 +168,8 @@ def main():
     # run_sample()
     # run_logs()
     # run_contacts()
-    run_inventory()
+    # run_inventory()
+    run_users()
 
 if __name__ == "__main__":
     main()

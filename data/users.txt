@@ -1,3 +1,10 @@
 username=jdoe password=Abcdef!1
 username=sam password=weakpass
 username=ann password=Strong#2026
+username=mike_42 password=Pass!23
+username=ALICE password=Qwerty!9
+username=bob password=Bob123!
+username=charlie99 password=charlie99
+username=eva password=Eva@2025
+username=tom password=Tom!1
+username=jane_doe password=JaneDoe#123
